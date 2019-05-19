@@ -21,4 +21,8 @@ public class Frame {
     public int getThrowTwo() {
         return this.score[1];
     }
+
+    public int getThrowScore() {
+        return this.score[0] + this.score[1];
+    }
 }
