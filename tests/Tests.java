@@ -19,4 +19,15 @@ public class Tests {
     }
 
 
+    @Test
+    public void FrameScore() {
+        Frame frame = new Frame();
+        frame.setThrow(2);
+        frame.setThrow(4);
+
+        int throwScore = frame.getThrowScore();
+        assertEquals(6, throwScore);
+    }
+
+
 }
