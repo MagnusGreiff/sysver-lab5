@@ -30,4 +30,10 @@ public class Tests {
     }
 
 
+    @Test
+    public void Game() {
+        Game game = new Game();
+        Frame allFrames[] = game.allFrames();
+        assertEquals(10, allFrames);
+    }
 }
