@@ -32,7 +32,11 @@ class Game {
                   score += (this.frames[i].getThrowScore() + (this.frames[i + 1].getThrowScore()));
               }
           } else if (this.frames[i].getThrowScore() == 10) { // Spare
-              score += (this.frames[i].getThrowScore() + this.frames[i + 1].getThrowOne());
+              if (i == (this.frames.length - 1)) { // If spare is last frame, give 7 bonus
+                  score += (this.frames[i].getThrowScore() + 7);
+              } else {
+                  score += (this.frames[i].getThrowScore() + this.frames[i + 1].getThrowOne());
+              }
           } else {
             score += this.frames[i].getThrowScore();
           }
