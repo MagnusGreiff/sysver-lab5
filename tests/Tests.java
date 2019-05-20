@@ -132,4 +132,16 @@ public class Tests {
         int res = game.getScore();
         assertEquals(93, res);
     }
+
+
+    @Test
+    public void BestScore() {
+        Game game = new Game();
+        int[] score = {10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        int[] bonus = {10, 10};
+        game.setScore(score);
+        game.setBonus(bonus);
+        int res = game.getScore();
+        assertEquals(300, res);
+    }
 }
