@@ -144,4 +144,16 @@ public class Tests {
         int res = game.getScore();
         assertEquals(300, res);
     }
+
+
+    @Test
+    public void RealGame() {
+        Game game = new Game();
+        int[] score = {6, 3, 7, 1, 8, 2, 7, 2, 10, 0, 6, 2, 7, 3, 10, 0, 8, 0, 7, 3};
+        int[] bonus = {10};
+        game.setScore(score);
+        game.setBonus(bonus);
+        int res = game.getScore();
+        assertEquals(135, res);
+    }
 }
