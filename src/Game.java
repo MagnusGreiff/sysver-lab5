@@ -24,8 +24,12 @@ class Game {
 
     int getScore() {
         int score = 0;
-        for (Frame frame: this.frames) {
-            score += frame.getThrowScore();
+        for (int i = 0; i < this.frames.length; i++) {
+          if (this.frames[i].getThrowOne() == 10) {
+              score += (10 + (this.frames[i + 1].getThrowScore()));
+          } else {
+            score += this.frames[i].getThrowScore();
+          }
         }
         return score;
     }
