@@ -26,10 +26,15 @@ class Game {
         int score = 0;
         for (int i = 0; i < this.frames.length; i++) {
           if (this.frames[i].getThrowOne() == 10) { // Strike
-              if (this.frames[i + 1].getThrowOne() == 10) { // Second Strike
-                  score += ((this.frames[i].getThrowScore() + this.frames[i + 1].getThrowScore()) + (this.frames[i + 2].getThrowOne()));
+              if (i < (this.frames.length - 1)) {
+                  if (this.frames[i + 1].getThrowOne() == 10) { // Second Strike
+                      score += ((this.frames[i].getThrowScore() + this.frames[i + 1].getThrowScore()) + (this.frames[i + 2].getThrowOne()));
+                  } else {
+                      score += (this.frames[i].getThrowScore() + (this.frames[i + 1].getThrowScore()));
+                  }
               } else {
-                  score += (this.frames[i].getThrowScore() + (this.frames[i + 1].getThrowScore()));
+                  int [] bonus = {7, 2};
+                  score += (this.frames[i].getThrowScore() + Arrays.stream(bonus).sum());
               }
           } else if (this.frames[i].getThrowScore() == 10) { // Spare
               if (i == (this.frames.length - 1)) { // If spare is last frame, give 7 bonus
