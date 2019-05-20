@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 class Game {
     private Frame[] frames;
+    private int[] bonus;
 
     Game() {
         this.frames = new Frame[10];
@@ -33,12 +34,11 @@ class Game {
                       score += (this.frames[i].getThrowScore() + (this.frames[i + 1].getThrowScore()));
                   }
               } else {
-                  int [] bonus = {7, 2};
-                  score += (this.frames[i].getThrowScore() + Arrays.stream(bonus).sum());
+                  score += (this.frames[i].getThrowScore() + Arrays.stream(this.bonus).sum());
               }
           } else if (this.frames[i].getThrowScore() == 10) { // Spare
               if (i == (this.frames.length - 1)) { // If spare is last frame, give 7 bonus
-                  score += (this.frames[i].getThrowScore() + 7);
+                  score += (this.frames[i].getThrowScore() + Arrays.stream(this.bonus).sum());
               } else {
                   score += (this.frames[i].getThrowScore() + this.frames[i + 1].getThrowOne());
               }
@@ -47,6 +47,10 @@ class Game {
           }
         }
         return score;
+    }
+
+    void setBonus(int[] bonus) {
+        this.bonus = bonus;
     }
 }
 // System.out.print()

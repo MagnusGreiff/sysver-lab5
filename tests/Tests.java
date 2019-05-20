@@ -102,7 +102,9 @@ public class Tests {
     public void SpareLastFrame() {
         Game game = new Game();
         int[] score = {1, 5, 3, 6, 7, 2, 3, 6, 4, 4, 5, 3, 3, 3, 4, 5, 8, 1, 2, 8};
+        int[] bonus = {7};
         game.setScore(score);
+        game.setBonus(bonus);
         int res = game.getScore();
         assertEquals(90, res);
     }
@@ -112,7 +114,9 @@ public class Tests {
     public void StrikeLastFrame() {
         Game game = new Game();
         int[] score = {1, 5, 3, 6, 7, 2, 3, 6, 4, 4, 5, 3, 3, 3, 4, 5, 8, 1, 10, 0};
+        int[] bonus = {7, 2};
         game.setScore(score);
+        game.setBonus(bonus);
         int res = game.getScore();
         assertEquals(92, res);
     }
@@ -122,7 +126,9 @@ public class Tests {
     public void StrikeBonus() {
         Game game = new Game();
         int[] score = {1, 5, 3, 6, 7, 2, 3, 6, 4, 4, 5, 3, 3, 3, 4, 5, 8, 1, 2, 8};
+        int[] bonus = {10};
         game.setScore(score);
+        game.setBonus(bonus);
         int res = game.getScore();
         assertEquals(93, res);
     }
