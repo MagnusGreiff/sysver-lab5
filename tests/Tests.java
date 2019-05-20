@@ -66,4 +66,14 @@ public class Tests {
         int res = game.getScore();
         assertEquals(88, res);
     }
+
+
+    @Test
+    public void StrikeAndSpare() {
+        Game game = new Game();
+        int[] score = {10,0,4,6,7,2,3,6,4,4,5,3,3,3,4,5,8,1,2,6};
+        game.setScore(score);
+        int res = game.getScore();
+        assertEquals(103, res);
+    }
 }
