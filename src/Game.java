@@ -27,6 +27,8 @@ class Game {
         for (int i = 0; i < this.frames.length; i++) {
           if (this.frames[i].getThrowOne() == 10) {
               score += (10 + (this.frames[i + 1].getThrowScore()));
+          } else if (this.frames[i].getThrowScore() == 10) {
+              score += (this.frames[i].getThrowScore() + this.frames[i + 1].getThrowOne());
           } else {
             score += this.frames[i].getThrowScore();
           }
