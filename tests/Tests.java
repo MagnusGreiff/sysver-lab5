@@ -116,4 +116,14 @@ public class Tests {
         int res = game.getScore();
         assertEquals(92, res);
     }
+
+
+    @Test
+    public void StrikeBonus() {
+        Game game = new Game();
+        int[] score = {1, 5, 3, 6, 7, 2, 3, 6, 4, 4, 5, 3, 3, 3, 4, 5, 8, 1, 2, 8};
+        game.setScore(score);
+        int res = game.getScore();
+        assertEquals(93, res);
+    }
 }
