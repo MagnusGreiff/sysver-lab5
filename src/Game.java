@@ -29,7 +29,11 @@ class Game {
           if (this.frames[i].getThrowOne() == 10) { // Strike
               if (i < (this.frames.length - 1)) {
                   if (this.frames[i + 1].getThrowOne() == 10) { // Second Strike
-                      score += ((this.frames[i].getThrowScore() + this.frames[i + 1].getThrowScore()) + (this.frames[i + 2].getThrowOne()));
+                      if ((i + 2) < (this.frames.length)) {
+                          score += ((this.frames[i].getThrowScore() + this.frames[i + 1].getThrowScore()) + (this.frames[i + 2].getThrowOne()));
+                      } else {
+                          score += (this.frames[i].getThrowScore() + this.frames[i + 1].getThrowScore() +  this.bonus[0]);
+                      }
                   } else {
                       score += (this.frames[i].getThrowScore() + (this.frames[i + 1].getThrowScore()));
                   }
