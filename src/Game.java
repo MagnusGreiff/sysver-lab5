@@ -26,7 +26,11 @@ class Game {
         int score = 0;
         for (int i = 0; i < this.frames.length; i++) {
           if (this.frames[i].getThrowOne() == 10) { // Strike
-              score += (10 + (this.frames[i + 1].getThrowScore()));
+              if (this.frames[i + 1].getThrowOne() == 10) { // Second Strike
+                  score += ((this.frames[i].getThrowScore() + this.frames[i + 1].getThrowScore()) + (this.frames[i + 2].getThrowOne()));
+              } else {
+                  score += (this.frames[i].getThrowScore() + (this.frames[i + 1].getThrowScore()));
+              }
           } else if (this.frames[i].getThrowScore() == 10) { // Spare
               score += (this.frames[i].getThrowScore() + this.frames[i + 1].getThrowOne());
           } else {
